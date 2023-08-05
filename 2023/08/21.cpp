@@ -1,4 +1,4 @@
-class Solution
+class Q21
 {
 public:
     struct ListNode
@@ -9,7 +9,7 @@ public:
         ListNode(int x) : val(x), next(nullptr) {}
         ListNode(int x, ListNode *next) : val(x), next(next) {}
     };
-    
+
     ListNode *mergeTwoLists(ListNode *l1, ListNode *l2)
     {
         ListNode *preHead = new ListNode(-1);
@@ -32,7 +32,7 @@ public:
 
         // 合并后 l1 和 l2 最多只有一个还未被合并完，我们直接将链表末尾指向未合并完的链表即可
         prev->next = l1 == nullptr ? l2 : l1;
-
+        std::cout << "123";
         return preHead->next;
     }
 };
