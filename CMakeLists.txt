@@ -3,4 +3,4 @@ project(leecode-c)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(leecode-c main.cpp 2023/07/771.c)
+add_executable(leecode-c main.cpp 2023/08/21.cpp)
