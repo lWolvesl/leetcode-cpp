@@ -1,8 +1,10 @@
 #include <iostream>
-#include "2023/08/21.cpp"
+#include "2023/08/24.cpp"
+#include "lists.h"
 
 int main() {
-    Q21 *q = new Q21();
-    q->mergeTwoLists(NULL,NULL);
+    Q24 *q = new Q24();
+    ListNode *head = createRandomList(4);
+    head->list();
     return 0;
 }

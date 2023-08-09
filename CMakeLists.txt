@@ -4,3 +4,5 @@ project(leecode-c)
 set(CMAKE_CXX_STANDARD 11)
 
 add_executable(leecode-c main.cpp)
+
+target_include_directories(leecode-c PRIVATE dataStruct/LinkedList)
