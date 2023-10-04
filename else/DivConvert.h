@@ -24,4 +24,6 @@ string decimalToBinaryUsingEuclidean(int target) {
     return result;
 }
 
+// test : cout << decimalToBinaryUsingEuclidean(555) << endl;
+
 #endif //LEECODE_C_DIVCONVERT_H
