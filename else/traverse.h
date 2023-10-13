@@ -12,7 +12,7 @@ using namespace std;
 queue<TreeNode *> Q;
 
 //递归写法 - int型
-//先序遍历 preorder traversal
+// 先序遍历 preorder traversal
 void preorder_recursion_help(TreeNode *head) {
     if (head != nullptr) {
         Q.push(head);
@@ -26,7 +26,7 @@ queue<TreeNode *> preorder_recursion(TreeNode *head) {
     return Q;
 };
 
-//中序遍历 inorder traversal
+// 中序遍历 inorder traversal
 void inorder_recursion_help(TreeNode *head) {
     if (head != nullptr) {
         inorder_recursion_help(head->left);
@@ -40,7 +40,7 @@ queue<TreeNode *> inorder_recursion(TreeNode *head) {
     return Q;
 };
 
-//后序遍历 postorder traversal
+// 后序遍历 postorder traversal
 void postorder_recursion_help(TreeNode *head) {
     if (head != nullptr) {
         postorder_recursion_help(head->left);
@@ -53,5 +53,22 @@ queue<TreeNode *> postorder_recursion(TreeNode *head) {
     postorder_recursion_help(head);
     return Q;
 };
+
+// 非递归写法
+// 先序遍历 preorder traversal
+queue<TreeNode *> preorder(TreeNode *head) {
+
+}
+
+// 中序遍历 inorder traversal
+queue<TreeNode *> inorder(TreeNode *head) {
+
+}
+
+// 后序遍历 postorder traversal
+queue<TreeNode *> postorder(TreeNode *head) {
+
+}
+
 
 #endif //LEECODE_C_TRAVERSE_H
