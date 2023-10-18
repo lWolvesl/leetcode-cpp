@@ -8,6 +8,7 @@ using namespace std;
 
 #include "structs/Tree.h"
 #include <queue>
+#include <stack>
 
 queue<TreeNode *> Q;
 
@@ -57,17 +58,69 @@ queue<TreeNode *> postorder_recursion(TreeNode *head) {
 // 非递归写法
 // 先序遍历 preorder traversal
 queue<TreeNode *> preorder(TreeNode *head) {
+    if (!head) {
+        return Q;
+    }
 
+    auto temp = head;
+
+    stack < TreeNode * > S;
+
+    S.push(temp);
+
+    TreeNode *t;
+
+    while (!S.empty()) {
+        t = S.top();
+        S.pop();
+        Q.push(t);
+        if (t->right)
+            S.push(t->right);
+        if (t->left)
+            S.push(t->left);
+    }
+    return Q;
 }
 
 // 中序遍历 inorder traversal
 queue<TreeNode *> inorder(TreeNode *head) {
+    auto temp = head;
+    stack < TreeNode * > S;
 
+    while (temp != nullptr || !S.empty()) {
+        if (temp) {
+            S.push(temp);
+            temp = temp->left;
+            continue;
+        }
+        temp = S.top();
+        Q.push(temp);
+        S.pop();
+        temp = temp->right;
+    }
+    return Q;
 }
 
 // 后序遍历 postorder traversal
 queue<TreeNode *> postorder(TreeNode *head) {
+    auto temp = head;
+    stack < TreeNode * > S;
 
+    while (temp != nullptr || !S.empty()) {
+        if (temp) {
+            S.push(temp);
+            temp = temp->left;
+            continue;
+        }
+        temp = S.top();
+        Q.push(temp);
+
+        if (!temp->right) {
+            S.pop();
+        }
+        temp = temp->right;
+    }
+    return Q;
 }
 
 

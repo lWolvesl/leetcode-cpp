@@ -9,16 +9,12 @@
 #include <queue>
 #include "./structs/Tree.h"
 #include "./traverse.h"
+#include "./Heap/test.h"
 
 using namespace std;
 
 void run() {
-    TreeNode *node = creatRandomTree(9);
-    queue<TreeNode *> Q = postorder_recursion(node);
-    while (!Q.empty()) {
-        cout << Q.front()->val << " ";
-        Q.pop();
-    }
+    testPQ();
 }
 
 #endif //LEECODE_C_MAIN_H
