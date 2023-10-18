@@ -14,7 +14,12 @@
 using namespace std;
 
 void run() {
-    testPQ();
+    auto TreeNode = creatRandomTree(10);
+    auto Q = postorder(TreeNode);
+    while (!Q.empty()) {
+        cout << Q.front()->val << " ";
+        Q.pop();
+    }
 }
 
 #endif //LEECODE_C_MAIN_H

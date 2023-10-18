@@ -104,20 +104,23 @@ queue<TreeNode *> inorder(TreeNode *head) {
 // 后序遍历 postorder traversal
 queue<TreeNode *> postorder(TreeNode *head) {
     auto temp = head;
-    stack < TreeNode * > S;
+    stack <pair<TreeNode *, bool>> S;
 
     while (temp != nullptr || !S.empty()) {
         if (temp) {
-            S.push(temp);
+            S.emplace(temp, false);
             temp = temp->left;
             continue;
         }
-        temp = S.top();
-        Q.push(temp);
+        temp = S.top().first;
 
-        if (!temp->right) {
+        if (temp->right == nullptr || S.top().second) {
+            Q.push(temp);
             S.pop();
+            temp = nullptr;
+            continue;
         }
+        S.top().second = true;
         temp = temp->right;
     }
     return Q;

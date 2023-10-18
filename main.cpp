@@ -5,11 +5,5 @@
 using namespace std;
 
 int main() {
-    vector<int> nums;
-    nums.push_back(1);
-    nums.push_back(10);
-    nums.push_back(3);
-    nums.push_back(3);
-    nums.push_back(3);
-    cout << maxKelements(nums, 3) << endl;
+    run();
 }
