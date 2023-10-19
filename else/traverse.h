@@ -12,7 +12,7 @@ using namespace std;
 
 queue<TreeNode *> Q;
 
-//递归写法 - int型
+// 递归写法 - int型
 // 先序遍历 preorder traversal
 void preorder_recursion_help(TreeNode *head) {
     if (head != nullptr) {
@@ -126,5 +126,13 @@ queue<TreeNode *> postorder(TreeNode *head) {
     return Q;
 }
 
+void test() {
+    auto TreeNode = creatRandomTree(10);
+    auto Q = postorder(TreeNode);
+    while (!Q.empty()) {
+        cout << Q.front()->val << " ";
+        Q.pop();
+    }
+}
 
 #endif //LEECODE_C_TRAVERSE_H

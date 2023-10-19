@@ -10,16 +10,12 @@
 #include "./structs/Tree.h"
 #include "./traverse.h"
 #include "./Heap/test.h"
+#include "./sorts.h"
 
 using namespace std;
 
 void run() {
-    auto TreeNode = creatRandomTree(10);
-    auto Q = postorder(TreeNode);
-    while (!Q.empty()) {
-        cout << Q.front()->val << " ";
-        Q.pop();
-    }
+    runQS();
 }
 
 #endif //LEECODE_C_MAIN_H
