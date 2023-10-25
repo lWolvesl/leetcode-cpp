@@ -59,7 +59,11 @@ void quickSort(vector<int> &arr) {
 
 // 快速排序 - end
 
-void runQS() {
+queue<int> heapSort(vector<int> &arr) {
+
+}
+
+void runS() {
 //    std::random_device rd;
 //    std::mt19937 gen(rd());
 //    std::uniform_int_distribution<int> dis(1, 100);

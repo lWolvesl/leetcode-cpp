@@ -15,7 +15,7 @@
 using namespace std;
 
 void run() {
-    runQS();
+    runS();
 }
 
 #endif //LEECODE_C_MAIN_H
