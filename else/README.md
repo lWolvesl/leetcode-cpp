@@ -17,7 +17,7 @@
 -
     - [X] [图](./structs/Graph.h)
 
-    - [ ] [深度优先遍历](./structs/Graph.h)
+    - [X] [深度优先遍历](./structs/Graph.h)
  
 
 

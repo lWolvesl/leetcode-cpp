@@ -16,12 +16,10 @@
 using namespace std;
 
 void run() {
-    auto G = Graph(1);
-
-    auto Q = G.DFS(0);
-    while (!Q.empty()) {
-        cout << Q.front() << " ";
-        Q.pop();
+    vector<int> arr({3, 1, 5, 6, 8, 2, 4, 6, 7});
+    mergeSort(arr, 0, arr.size() - 1);
+    for (auto i: arr) {
+        cout << i << " ";
     }
 }
 

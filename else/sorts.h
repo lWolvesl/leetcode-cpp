@@ -56,12 +56,87 @@ void splits(vector<int> &arr, int left, int right) {
 void quickSort(vector<int> &arr) {
     splits(arr, 0, arr.size() - 1);
 }
-
 // 快速排序 - end
 
-queue<int> heapSort(vector<int> &arr) {
-
+// 堆排序 - start small -> large
+void maxHeapify(vector<int> &arr, int n, int i) {
+    int largest = i;
+    int left = i * 2 + 1;
+    int right = i * 2 + 2;
+    if (left < n && arr[left] > arr[largest]) {
+        largest = left;
+    }
+    if (right < n && arr[right] > arr[largest]) {
+        largest = right;
+    }
+    if (largest != i) {
+        swap(arr[i], arr[largest]);
+        maxHeapify(arr, n, largest);
+    }
 }
+
+void heapSort(vector<int> &arr) {
+    auto n = arr.size();
+    for (int i = n / 2 - 1; i >= 0; --i) {
+        maxHeapify(arr, n, i);
+    }
+    for (int i = n - 1; i > 0; i--) {
+        swap(arr[0], arr[i]);
+        maxHeapify(arr, i, 0);
+    }
+}
+// 堆排序 - end small -> large
+
+// 归并排序
+void merge(std::vector<int>& arr, int left, int middle, int right) {
+    int n1 = middle - left + 1;
+    int n2 = right - middle;
+
+    std::vector<int> leftArr(n1);
+    std::vector<int> rightArr(n2);
+
+    for (int i = 0; i < n1; i++) {
+        leftArr[i] = arr[left + i];
+    }
+    for (int i = 0; i < n2; i++) {
+        rightArr[i] = arr[middle + 1 + i];
+    }
+
+    int i = 0, j = 0, k = left;
+
+    while (i < n1 && j < n2) {
+        if (leftArr[i] <= rightArr[j]) {
+            arr[k] = leftArr[i];
+            i++;
+        } else {
+            arr[k] = rightArr[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < n1) {
+        arr[k] = leftArr[i];
+        i++;
+        k++;
+    }
+
+    while (j < n2) {
+        arr[k] = rightArr[j];
+        j++;
+        k++;
+    }
+}
+
+void mergeSort(std::vector<int>& arr, int left, int right) {
+    if (left < right) {
+        int middle = left + (right - left) / 2;
+        mergeSort(arr, left, middle);
+        mergeSort(arr, middle + 1, right);
+        merge(arr, left, middle, right);
+    }
+}
+
 
 void runS() {
 //    std::random_device rd;
