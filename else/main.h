@@ -11,11 +11,18 @@
 #include "./traverse.h"
 #include "./Heap/test.h"
 #include "./sorts.h"
+#include "./structs/Graph.h"
 
 using namespace std;
 
 void run() {
-    runS();
+    auto G = Graph(1);
+
+    auto Q = G.DFS(0);
+    while (!Q.empty()) {
+        cout << Q.front() << " ";
+        Q.pop();
+    }
 }
 
 #endif //LEECODE_C_MAIN_H
