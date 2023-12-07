@@ -38,3 +38,39 @@ unordered_map<int, int> statistic(vector<int> L1)
     }
     return m;
 }
+
+#include "../structs/List.h"
+
+ListNode *integrateList(LitNode *L1, ListNode *l2)
+{
+    ListNode *head = L1->value < L2->value ? L1 : L2;
+    if (L1->value < L2->value)
+    {
+        L1 = L1->next;
+    }
+    else
+    {
+        L2 = L2->next;
+    }
+    ListNode *temp = head->next;
+    while (L1 && L2)
+    {
+        temp->next = L1->value < L2->value ? L1 : L2;
+        if (L1->value < L2->value)
+        {
+            L1 = L1->next;
+        }
+        else
+        {
+            L2 = L2->next;
+        }
+        temp = temp->next;
+    }
+    if(L1){
+        temp->next = L1;
+    }
+    if(L2){
+        temp->next = L2;
+    }
+    return head;
+}
