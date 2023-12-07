@@ -6,6 +6,5 @@
 using namespace std;
 
 int main() {
-    string s = "01000111";
-    cout << findTheLongestBalancedSubstring(s) << endl;
+    run();
 }
