@@ -12,7 +12,7 @@
 #include "./Heap/test.h"
 #include "./sorts.h"
 #include "./structs/Graph.h"
-#include "./topic/2017.h"
+#include "./topic/2019.h"
 #include <iostream>
 
 using namespace std;
@@ -20,9 +20,12 @@ using namespace std;
 void run()
 {
     vector<int> arr({3, 2, 2, 4, 6, 2, 3});
-    TreeNode *head = createRandomTree(10);
-    reversechild(head);
-    lookTree(head);
+    odd_even(arr);
+    for (int i : arr)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
 }
 
 #endif // LEECODE_C_MAIN_H
