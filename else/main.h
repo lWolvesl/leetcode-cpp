@@ -12,7 +12,7 @@
 #include "./Heap/test.h"
 #include "./sorts.h"
 #include "./structs/Graph.h"
-#include "./topic/statistic.h"
+#include "./topic/2017.h"
 #include <iostream>
 
 using namespace std;
@@ -20,14 +20,9 @@ using namespace std;
 void run()
 {
     vector<int> arr({3, 2, 2, 4, 6, 2, 3});
-    map<int, int> m = statistic(arr);
-    for (pair<int, int> p : m)
-    {
-        if (p.second > 1)
-        {
-            cout << p.first << endl;
-        }
-    }
+    TreeNode *head = createRandomTree(10);
+    reversechild(head);
+    lookTree(head);
 }
 
 #endif // LEECODE_C_MAIN_H

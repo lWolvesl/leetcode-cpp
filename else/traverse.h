@@ -127,7 +127,7 @@ queue<TreeNode *> postorder(TreeNode *head) {
 }
 
 void test() {
-    auto TreeNode = creatRandomTree(10);
+    auto TreeNode = createRandomTree(10);
     auto Q = postorder(TreeNode);
     while (!Q.empty()) {
         cout << Q.front()->val << " ";

@@ -5,7 +5,8 @@
 #ifndef LEECODE_C_TREE_H
 #define LEECODE_C_TREE_H
 
-struct TreeNode {
+struct TreeNode
+{
     int val;
     TreeNode *left;
     TreeNode *right;
@@ -21,8 +22,10 @@ struct TreeNode {
 #include <random>
 #include <queue>
 
-TreeNode *creatRandomTree(int size) {
-    if (size == 0) {
+TreeNode *createRandomTree(int size)
+{
+    if (size == 0)
+    {
         return nullptr;
     }
     std::random_device rd;
@@ -31,7 +34,8 @@ TreeNode *creatRandomTree(int size) {
 
     std::queue<int> Q;
     std::queue<TreeNode *> T;
-    for (int i = size; i > 0; --i) {
+    for (int i = size; i > 0; --i)
+    {
         Q.push(dis(gen));
         std::cout << Q.back() << " ";
     }
@@ -41,21 +45,25 @@ TreeNode *creatRandomTree(int size) {
     T.push(head);
     Q.pop();
 
-    while (!Q.empty()) {
-        if (T.front()->left != nullptr && T.front()->right != nullptr) {
+    while (!Q.empty())
+    {
+        if (T.front()->left != nullptr && T.front()->right != nullptr)
+        {
             T.pop();
         }
 
         TreeNode *temp = new TreeNode(Q.front());
         Q.pop();
 
-        if (T.front()->left == nullptr) {
+        if (T.front()->left == nullptr)
+        {
             T.front()->left = temp;
             T.push(temp);
             continue;
         }
 
-        if (T.front()->right == nullptr) {
+        if (T.front()->right == nullptr)
+        {
             T.front()->right = temp;
             T.push(temp);
         }
@@ -63,4 +71,24 @@ TreeNode *creatRandomTree(int size) {
     return head;
 }
 
-#endif //LEECODE_C_TREE_H
+void lookTree(TreeNode *root)
+{
+    std::queue<TreeNode *> q;
+    q.push(root);
+    while (!q.empty())
+    {
+        TreeNode *head = q.front();
+        q.pop();
+        std::cout << head->val << " ";
+        if (head->left)
+        {
+            q.push(head->left);
+        }
+        if (head->right)
+        {
+            q.push(head->right);
+        }
+    }
+}
+
+#endif // LEECODE_C_TREE_H
