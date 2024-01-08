@@ -126,7 +126,7 @@ queue<TreeNode *> postorder(TreeNode *head) {
     return Q;
 }
 
-void test() {
+void test1() {
     auto TreeNode = createRandomTree(10);
     auto Q = postorder(TreeNode);
     while (!Q.empty()) {
