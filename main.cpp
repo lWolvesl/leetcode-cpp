@@ -1,8 +1,8 @@
 #include <iostream>
-#include "./2024/02/1696.h"
+#include "./2024/06/LCP61.h"
 
 using namespace std;
 
 int main() {
-    cout << maxResult(nullptr, 0, 0);
+    cout << run();
 }
