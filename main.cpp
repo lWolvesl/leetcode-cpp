@@ -1,5 +1,5 @@
 #include <iostream>
-#include "./2024/06/LCP61.h"
+#include "./2024/06/520.h"
 
 using namespace std;
 
