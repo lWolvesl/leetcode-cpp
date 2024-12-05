@@ -30,26 +30,27 @@ void shellSort(vector<int> &arr) {
 }
 
 // 快速排序 - start
-int partition(vector<int> &arr, int left, int right) {
-    int norm = left;
-    while (left < right) {
-        while (left < right && arr[norm] <= arr[right]) {
+int partition(vector<int> &arr,int left,int right){
+    int sign = arr[left];
+    while(left < right){
+        while(left < right && sign <= arr[right]){
             right--;
         }
-        while (left < right && arr[norm] >= arr[left]) {
+        swap(arr[left],arr[right]);
+        while(left < right && arr[left] <= sign){
             left++;
         }
-        swap(arr[left], arr[right]);
+        swap(arr[left],arr[right]);
     }
-    swap(arr[norm], arr[left]);
     return left;
 }
 
-void splits(vector<int> &arr, int left, int right) {
-    if (left < right) {
-        auto norm = partition(arr, left, right);
-        splits(arr, left, norm - 1);
-        splits(arr, norm + 1, right);
+void splits(vector<int> &arr,int left,int right){
+    if (left < right)
+    {
+        int norm = partition(arr,left,right);
+        splits(arr,left,norm - 1);
+        splits(arr,norm + 1,right);
     }
 }
 
