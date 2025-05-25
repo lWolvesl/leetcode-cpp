@@ -10,8 +10,7 @@ public:
     vector<int> findWordsContaining(vector<string>& words, char x) {
         vector<int> res;
         for (int i = 0; i < words.size(); i++) {
-            const string& word = words[i];
-            for (char c : word) {
+            for (const string& word = words[i]; const char c : word) {
                 if (c == x) {
                     res.push_back(i);
                     break;  // 找到一个匹配就可以停止检查当前单词
