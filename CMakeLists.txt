@@ -3,6 +3,6 @@ project(leecode-cpp)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(leecode-c main.cpp)
+add_executable(leecode-cpp main.cpp)
 
-target_include_directories(leecode-c PRIVATE dataStruct/LinkedList)
+target_include_directories(leecode-cpp PRIVATE dataStruct/LinkedList)
