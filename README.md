@@ -1,7 +1,7 @@
-# leecode
+# leetcode
 
-- https://github.com/lWolvesl/leecode-c.git
-- https://gitea.wolves.top/wolves/leecode-c.git
+- https://github.com/lWolvesl/leetcode-cpp.git
+- https://gitea.wolves.top/wolves/leetcode-cpp.git
 
 - by C/C++
 
